@@ -1,0 +1,39 @@
+//
+//  LoadingView.swift
+//  App209
+//
+//  Created by Вячеслав on 10/2/23.
+//
+
+import SwiftUI
+
+struct LoadingView: View {
+    
+    var body: some View {
+        
+        ZStack {
+            
+            Color("primary")
+                .ignoresSafeArea()
+            
+            Image("loading_bg")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .ignoresSafeArea()
+            
+            Image("logo_big")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 150)
+            
+            ProgressView()
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .padding()
+        }
+    }
+}
+
+#Preview {
+    LoadingView()
+}
